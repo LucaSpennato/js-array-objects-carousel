@@ -94,6 +94,27 @@ imgsWrapper[currentActive].classList.add('active');
 imgsThumbnail[currentActive].classList.add('active-tumb');
 
 
+const startBtn = document.getElementById('start');
+const stopBtn = document.getElementById('stop');
+
+let clock;
+let isPlayOn = false;
+
+startBtn.addEventListener('click', ()=>{
+    if(isPlayOn === false){
+        clock = setInterval(carouselAutoplay,1000);
+    }
+    isPlayOn = true;
+});
+
+stopBtn.addEventListener('click', ()=>{
+    clearInterval(clock);
+    isPlayOn = false;
+})
+
+
+
+
 nextBtn.addEventListener('click', () => {
 
     imgsWrapper[currentActive].classList.remove('active');
@@ -123,6 +144,22 @@ prevBtn.addEventListener('click', function(){
     imgsWrapper[currentActive].classList.add('active'); 
     imgsThumbnail[currentActive].classList.add('active-tumb');
 })
+
+function carouselAutoplay(){
+
+    imgsWrapper[currentActive].classList.remove('active');
+    imgsThumbnail[currentActive].classList.remove('active-tumb');
+
+    currentActive++;
+
+    if (currentActive === imgsWrapper.length){
+        currentActive = 0;
+    }
+
+    imgsWrapper[currentActive].classList.add('active');
+    imgsThumbnail[currentActive].classList.add('active-tumb');
+
+};
 
 // funzione per crare l'html da usare per le immagini del carosello
 function carouselImageHtml(classForDescription, classTitle, classParagraph, imgSrc, title, paragraph) {
