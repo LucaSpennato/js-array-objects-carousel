@@ -56,6 +56,7 @@ const images = [
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const carouselWrapper = document.getElementById('carousel-wrapper');
+let imgsWrapper = [];
 
 // ciclo in foreach ogni elemento dell'array e lo salvo nelle costanti
 images.forEach((element) => {
@@ -64,39 +65,71 @@ images.forEach((element) => {
     const titlePic = element.title;
     const titleDescription = element.description;
 
-    console.log(urlPic);
-    console.log(titlePic);
-    console.log(titleDescription);
+    // console.log(urlPic);
+    // console.log(titlePic);
+    // console.log(titleDescription);
+
+    const singleImgWrapper = document.createElement('div');
+    carouselWrapper.append(singleImgWrapper);
 
     let htmlElements = carouselImageHtml("description","title","paragraph","img-fluid",urlPic,titlePic,titleDescription); 
+
+    singleImgWrapper.innerHTML += htmlElements;
     
-    carouselWrapper.innerHTML += htmlElements;
-    
+    imgsWrapper.push(singleImgWrapper)
 });
 
+console.log(imgsWrapper);
+
+let currentActive = 0;
+
 // metto una sola img visibile all'inizio, la prima
-document.querySelector('#carousel-wrapper > div').classList.add('active');
+imgsWrapper[currentActive].classList.add('active');
+
 
 nextBtn.addEventListener('click', () => {
 
+    imgsWrapper[currentActive].classList.remove('active');
 
+    currentActive++;
 
+    if (currentActive === imgsWrapper.length){
+        currentActive = 0;
+    }
+
+    imgsWrapper[currentActive].classList.add('active');
 
 })
+
+prevBtn.addEventListener('click', function(){
+
+    imgsWrapper[currentActive].classList.remove('active');
+
+    currentActive--;
+
+    if (currentActive === -1){
+        currentActive = imgsWrapper.length-1;
+    }
+
+    imgsWrapper[currentActive].classList.add('active');
+
+    
+})
+
+
 
 
 // funzione per crare l'html da usare per le immagini del carosello
 function carouselImageHtml(classForDescription, classTitle, classParagraph, imgClass, imgSrc, title, paragraph) {
 
     let singleImg = `
-    <div>
         <div class=${classForDescription}>
             <h2 class=${classTitle}>${title}</h2>
             <div class=${classParagraph}>${paragraph}</div>
         </div>
         <img class=${imgClass}
             src="${imgSrc}" alt="carousel-img">
-    </div>`
+        `
 
     return singleImg;
 }

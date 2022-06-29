@@ -14,7 +14,3 @@
 #carousel-wrapper .active{
     display: block;
 }
-
-#carousel-wrapper .disabled{
-    display: none;
-}
