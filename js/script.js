@@ -68,17 +68,28 @@ images.forEach((element) => {
     console.log(titlePic);
     console.log(titleDescription);
 
-    let htmlElements = carouselImageHtml("single-img","description","title","paragraph","img-fluid",urlPic,titlePic,titleDescription); 
+    let htmlElements = carouselImageHtml("description","title","paragraph","img-fluid",urlPic,titlePic,titleDescription); 
+    
     carouselWrapper.innerHTML += htmlElements;
-
+    
 });
+
+// metto una sola img visibile all'inizio, la prima
+document.querySelector('#carousel-wrapper > div').classList.add('active');
+
+nextBtn.addEventListener('click', () => {
+
+
+
+
+})
 
 
 // funzione per crare l'html da usare per le immagini del carosello
-function carouselImageHtml(classForSingleContainer, classForDescription, classTitle, classParagraph, imgClass, imgSrc, title, paragraph) {
+function carouselImageHtml(classForDescription, classTitle, classParagraph, imgClass, imgSrc, title, paragraph) {
 
     let singleImg = `
-    <div class=${classForSingleContainer}>
+    <div>
         <div class=${classForDescription}>
             <h2 class=${classTitle}>${title}</h2>
             <div class=${classParagraph}>${paragraph}</div>

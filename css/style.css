@@ -1,8 +1,9 @@
-.single-img{
+#carousel-wrapper > *{
     position: relative;
+    display: none;
 }
 
-.single-img .description{
+#carousel-wrapper .description{
     position: absolute;
     right: 3rem;
     top: 2rem;
@@ -10,10 +11,10 @@
     text-align: end;
 }
 
-.active{
+#carousel-wrapper .active{
     display: block;
 }
 
-.disabled{
+#carousel-wrapper .disabled{
     display: none;
 }
