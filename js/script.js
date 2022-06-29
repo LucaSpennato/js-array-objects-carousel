@@ -65,14 +65,10 @@ images.forEach((element) => {
     const titlePic = element.title;
     const titleDescription = element.description;
 
-    // console.log(urlPic);
-    // console.log(titlePic);
-    // console.log(titleDescription);
-
     const singleImgWrapper = document.createElement('div');
     carouselWrapper.append(singleImgWrapper);
 
-    let htmlElements = carouselImageHtml("description","title","paragraph","img-fluid",urlPic,titlePic,titleDescription); 
+    let htmlElements = carouselImageHtml("description","title","paragraph",urlPic,titlePic,titleDescription); 
 
     singleImgWrapper.innerHTML += htmlElements;
     
@@ -98,7 +94,6 @@ nextBtn.addEventListener('click', () => {
     }
 
     imgsWrapper[currentActive].classList.add('active');
-
 })
 
 prevBtn.addEventListener('click', function(){
@@ -111,25 +106,18 @@ prevBtn.addEventListener('click', function(){
         currentActive = imgsWrapper.length-1;
     }
 
-    imgsWrapper[currentActive].classList.add('active');
-
-    
+    imgsWrapper[currentActive].classList.add('active'); 
 })
 
-
-
-
 // funzione per crare l'html da usare per le immagini del carosello
-function carouselImageHtml(classForDescription, classTitle, classParagraph, imgClass, imgSrc, title, paragraph) {
+function carouselImageHtml(classForDescription, classTitle, classParagraph, imgSrc, title, paragraph) {
 
     let singleImg = `
         <div class=${classForDescription}>
             <h2 class=${classTitle}>${title}</h2>
             <div class=${classParagraph}>${paragraph}</div>
         </div>
-        <img class=${imgClass}
-            src="${imgSrc}" alt="carousel-img">
-        `
+        <img src="${imgSrc}" alt="carousel-img">`
 
     return singleImg;
 }

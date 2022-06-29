@@ -1,6 +1,16 @@
+#carousel-wrapper{
+    position: relative;
+}
+
 #carousel-wrapper > *{
     position: relative;
     display: none;
+}
+
+#carousel-wrapper img{
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
 }
 
 #carousel-wrapper .description{
@@ -13,4 +23,40 @@
 
 #carousel-wrapper .active{
     display: block;
+}
+
+#prev-btn, #next-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    font-size: 1.5rem;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    padding: .5rem;
+    opacity: .8;
+    border: none;
+    border-radius: 50%;
+    transition: all 200ms linear;
+}
+
+#prev-btn{
+    bottom: 6rem;
+    left: 3rem;
+}
+
+#next-btn{
+    bottom: 6rem;
+    right: 3rem;
+}
+
+#prev-btn:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+#next-btn:hover{
+    transform: scale(1.2);
+    opacity: 1;
 }
