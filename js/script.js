@@ -56,7 +56,11 @@ const images = [
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const carouselWrapper = document.getElementById('carousel-wrapper');
+const thumbnail = document.getElementById('thumbnail');
+console.log(thumbnail)
 let imgsWrapper = [];
+let imgsThumbnail = [];
+console.log(imgsThumbnail);
 
 // ciclo in foreach ogni elemento dell'array e lo salvo nelle costanti
 images.forEach((element) => {
@@ -69,23 +73,31 @@ images.forEach((element) => {
     carouselWrapper.append(singleImgWrapper);
 
     let htmlElements = carouselImageHtml("description","title","paragraph",urlPic,titlePic,titleDescription); 
-
     singleImgWrapper.innerHTML += htmlElements;
+    imgsWrapper.push(singleImgWrapper);
+
+    let thumbnailImg = carouselThumbnailElements(urlPic);
+    let thumbnailElements = document.createElement('div');
+
+    thumbnailElements.innerHTML += thumbnailImg;
+
+    thumbnail.append(thumbnailElements);
+    imgsThumbnail.push(thumbnailElements);
     
-    imgsWrapper.push(singleImgWrapper)
 });
 
-console.log(imgsWrapper);
 
 let currentActive = 0;
 
 // metto una sola img visibile all'inizio, la prima
 imgsWrapper[currentActive].classList.add('active');
+imgsThumbnail[currentActive].classList.add('active-tumb');
 
 
 nextBtn.addEventListener('click', () => {
 
     imgsWrapper[currentActive].classList.remove('active');
+    imgsThumbnail[currentActive].classList.remove('active-tumb');
 
     currentActive++;
 
@@ -94,11 +106,13 @@ nextBtn.addEventListener('click', () => {
     }
 
     imgsWrapper[currentActive].classList.add('active');
+    imgsThumbnail[currentActive].classList.add('active-tumb');
 })
 
 prevBtn.addEventListener('click', function(){
 
     imgsWrapper[currentActive].classList.remove('active');
+    imgsThumbnail[currentActive].classList.remove('active-tumb');
 
     currentActive--;
 
@@ -107,6 +121,7 @@ prevBtn.addEventListener('click', function(){
     }
 
     imgsWrapper[currentActive].classList.add('active'); 
+    imgsThumbnail[currentActive].classList.add('active-tumb');
 })
 
 // funzione per crare l'html da usare per le immagini del carosello
@@ -120,4 +135,9 @@ function carouselImageHtml(classForDescription, classTitle, classParagraph, imgS
         <img src="${imgSrc}" alt="carousel-img">`
 
     return singleImg;
+}
+
+function carouselThumbnailElements (elementUrl){
+    let thumbnailElements = `<div><img src="${elementUrl}" alt="thumb-imgs"></div>`
+    return thumbnailElements;
 }

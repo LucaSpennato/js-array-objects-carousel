@@ -30,7 +30,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     font-size: 1.5rem;
     color: black;
     background-color: rgb(255, 255, 255);
@@ -42,12 +42,12 @@
 }
 
 #prev-btn{
-    bottom: 6rem;
+    bottom: 2rem;
     left: 3rem;
 }
 
 #next-btn{
-    bottom: 6rem;
+    bottom: 2rem;
     right: 3rem;
 }
 
@@ -59,4 +59,20 @@
 #next-btn:hover{
     transform: scale(1.2);
     opacity: 1;
+}
+
+#thumbnail div{
+    height: 15vh;
+    width: calc(100% / 5);
+}
+
+#thumbnail div img{
+    width: 500%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.active-tumb img{
+    /* box-shadow: inset 0px 0px 0px 5px #000000; */
+    border: 3px solid black;
 }
