@@ -68,5 +68,24 @@ images.forEach((element) => {
     console.log(titlePic);
     console.log(titleDescription);
 
+    let htmlElements = carouselImageHtml("single-img","description","title","paragraph","img-fluid",urlPic,titlePic,titleDescription); 
+    carouselWrapper.innerHTML += htmlElements;
 
 });
+
+
+// funzione per crare l'html da usare per le immagini del carosello
+function carouselImageHtml(classForSingleContainer, classForDescription, classTitle, classParagraph, imgClass, imgSrc, title, paragraph) {
+
+    let singleImg = `
+    <div class=${classForSingleContainer}>
+        <div class=${classForDescription}>
+            <h2 class=${classTitle}>${title}</h2>
+            <div class=${classParagraph}>${paragraph}</div>
+        </div>
+        <img class=${imgClass}
+            src="${imgSrc}" alt="carousel-img">
+    </div>`
+
+    return singleImg;
+}
