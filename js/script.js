@@ -52,3 +52,21 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const carouselWrapper = document.getElementById('carousel-wrapper');
+
+// ciclo in foreach ogni elemento dell'array e lo salvo nelle costanti
+images.forEach((element) => {
+
+    const urlPic = element.url;
+    const titlePic = element.title;
+    const titleDescription = element.description;
+
+    console.log(urlPic);
+    console.log(titlePic);
+    console.log(titleDescription);
+
+
+});

@@ -9,3 +9,11 @@
     color: white;
     text-align: end;
 }
+
+.active{
+    display: block;
+}
+
+.disabled{
+    display: none;
+}
