@@ -1,0 +1,11 @@
+.single-img{
+    position: relative;
+}
+
+.single-img .description{
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    color: white;
+    text-align: end;
+}

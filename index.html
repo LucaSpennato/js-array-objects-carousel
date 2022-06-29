@@ -1,14 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- personal css -->
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Js carousel</title>
 </head>
+
 <body>
-    
+
+    <main>
+
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-8 py-5 my-5">
+
+                    <div class="single-img">
+                        <div class="description">
+                            <h2 class="title">Svezia</h2>
+                            <div class="paragraph">Lorem</div>
+                        </div>
+                        <img class="img-fluid"
+                            src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                    </div>
+
+                    <div class="single-img">
+                        <div class="description">
+                            <h2 class="title">Perù</h2>
+                            <div class="paragraph">Lorem</div>
+                        </div>
+                        <img class="img-fluid"
+                            src="https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg"
+                            alt="">
+                    </div>
+
+                    <div class="single-img">
+                        <div class="description">
+                            <h2 class="title">Chile</h2>
+                            <div class="paragraph">Lorem</div>
+                        </div>
+                        <img class="img-fluid"
+                            src="https://img.itinari.com/pages/images/original/0d3ed180-d22d-48e8-84df-19c4d888b41f-62-crop.jpg?ch=DPR&dpr=2.625&w=1600&s=7ebd4b5a9e045f41b4e0c7c75d298d6c"
+                            alt="">
+                    </div>
+
+                    <div class="single-img">
+                        <div class="description">
+                            <h2 class="title">Argentina</h2>
+                            <div class="paragraph">Lorem</div>
+                        </div>
+                        <img class="img-fluid"
+                            src="https://static1.evcdn.net/images/reduction/1583177_w-1920_h-1080_q-70_m-crop.jpg"
+                            alt="">
+                    </div>
+
+                    <div class="single-img">
+                        <div class="description">
+                            <h2 class="title">Colombia</h2>
+                            <div class="paragraph">Lorem</div>
+                        </div>
+                        <img class="img-fluid"
+                            src="https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="col-8 my-5 d-flex justify-content-between">
+                    <button class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn btn-danger"><i class="fa-solid fa-arrow-right"></i></button>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
+
 </html>
